@@ -27,18 +27,15 @@
     <script type="text/javascript" charset="utf-8">
     "use strict";
     var menu_data = [
-	{id: "dashboard", icon: "mdi mdi-view-dashboard", value: "Головна",  data:[
-		{ id: "dashboard1", value: "Dashboard 1"},
-		{ id: "dashboard2", value: "Dashboard 2"}
+	{id: "main", icon: "mdi mdi-view-dashboard", value: "Головна"},
+	{id: "category", icon: "mdi mdi-view-column", value:"Категорія 1", data:[
+		{ id: "category_1", value: "Підкатегорія 1"},
+		{ id: "category_2", value: "Підкатегорія 2"}
 	]},
-	{id: "layouts", icon: "mdi mdi-view-column", value:"Категорія 1", data:[
-		{ id: "accordions", value: "Accordions"},
-		{ id: "portlets", value: "Portlets"}
-	]},
-	{id: "tables", icon: "mdi mdi-table", value:"Категорія 2", data:[
-		{ id: "tables1", value: "Datatable"},
-		{ id: "tables2", value: "TreeTable"},
-		{ id: "tables3", value: "Pivot"}
+	{id: "categorys", icon: "mdi mdi-table", value:"Категорія 2", data:[
+		{ id: "tables1", value: "Підкатегорія 1"},
+		{ id: "tables2", value: "Підкатегорія 2"},
+		{ id: "tables3", value: "Підкатегорія 3"}
 	]},
 	{id: "uis", icon: "mdi mdi-puzzle", value:"Категорія 3", data:[
 		{ id: "dataview", value: "DataView"},
@@ -47,16 +44,15 @@
 		{ id: "tree", value: "Tree"}
 	]},
 	{id: "tools", icon: "mdi mdi-calendar", value:"Категорія 4", data:[
-		{ id: "kanban", value: "Kanban Board"},
-		{ id: "pivot", value: "Pivot Chart"},
-		{ id: "scheduler", value: "Calendar"}
+		{ id: "kanban", value: "lorem"},
+		{ id: "pivot", value: "lorem"},
+		{ id: "scheduler", value: "lorem"}
 	]},
 	{id: "forms", icon: "mdi mdi-pencil", value:"Контакти",  data:[
 		{ id: "buttons", value: "Buttons"},
 		{ id: "selects", value: "Select boxes"},
 		{ id: "inputs", value: "Inputs"}
 	]},
-	{id: "demo", icon: "mdi mdi-book", value:"Documentation"}
 ];
 
 
@@ -67,8 +63,9 @@ webix.ui({
 				width: 37, align: "left", css: "app_button", click: function(){
 					$$("$sidebar1").toggle();
 				}
-			},
-			{ view: "label", label: "My App"},
+            },
+			{ view: "label", label: "SmartMed"},
+            { view:"label", label:"<img src='../assets/img/logo.png' style='height:30px'>"},
 			{},
 			{ view: "button", type: "icon", width: 45, css: "app_button", icon: "mdi mdi-comment",  badge:4},
 			{ view: "button", type: "icon", width: 45, css: "app_button", icon: "mdi mdi-bell",  badge:10}
@@ -83,9 +80,10 @@ webix.ui({
 						webix.message("Selected: "+this.getItem(id).value);
 					}
 				}
-			},
-			{ template: "http->templates/card_view.html"}
+            },
+                {template:"http->/templates/card_view.html"},
 		]}
+            
 	]
 });
 
