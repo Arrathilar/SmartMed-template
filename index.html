@@ -64,10 +64,8 @@ webix.ui({
 					$$("$sidebar1").toggle();
 				}
             },
-			{ view: "label", label: "SmartMed"},
-            { view:"label", label:"<img src='../assets/img/logo.png' style='height:30px'>"},
-			{},
-			{ view: "button", type: "icon", width: 45, css: "app_button", icon: "mdi mdi-cart",  badge:4},
+			{ view: "label", label: "<img src='../assets/img/logo.png' style='height:30px'> SmartMed"},
+			{ view: "button", type: "icon", width: 45, css: "app_button", icon: "mdi mdi-cart", tooltip:"Кошик", popup:"basket", badge:4},
 			// { view: "button", type: "icon", width: 45, css: "app_button", icon: "mdi mdi-bell",  badge:10}
 		]},
 		{ cols:[
@@ -85,6 +83,23 @@ webix.ui({
 		]}
             
 	]
+});
+webix.ui({
+  view:"popup",
+  id:"basket",
+  head:"basket_popup",
+  width:500,
+  body:{
+    view:"list", 
+    data:[
+      {id:"1", name:"first item", cost:"100$"},
+      {id:"2", name:"second item", cost:"200$"},
+      {id:"3", name:"third item", cost:"300$"}
+    ],
+    template:"#name# - #cost#",
+    autoheight:true,
+    select:true
+  }
 });
 
 
