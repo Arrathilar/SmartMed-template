@@ -1,0 +1,3 @@
+“script”: {
+ “test”: “NODE_ENV=test tape *-/assets/main.js”
+}
