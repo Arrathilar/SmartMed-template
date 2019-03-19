@@ -201,6 +201,10 @@ webix.ui({
                           body: {
                               view: "form",
                               elements: [
+                                  {view:"radio", name:"gr1x", label:"Branch", value:2, options:[
+                                    { value:"Master", id:1 },
+                                    { value:"Branch", id:2 },
+                                  ] },
                                   {
                                       rows: [
                                           { template: "Alpha fields", type: "section" },
@@ -213,7 +217,14 @@ webix.ui({
                                             { template: "Beta fields", type: "section" },
                                             { view: "text", label: "Beta 1", value: "" }
                                         ]
-                                    }
+                                    },
+                                    {
+                                        rows: [
+                                            { template: "1234", type: "section"},
+                                            { view: "text", label: "Beta 1", value: "" },
+                                        ]
+                                    },
+                                    { view:"button", value:"Confirm", width:200, align:"center" }
                                 ]
                             }
                         },
