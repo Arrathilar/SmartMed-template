@@ -1,31 +1,4 @@
-// window.onload = function() {
-//     document.querySelector(".cont_modal").className = "cont_modal";
-//   };
-//   var c = 0;
-//   function open_close() {
-//     if (c % 2 == 0) {
-//       document.querySelector(".cont_modal").className =
-//         "cont_modal cont_modal_active";
-//       c++;
-//     } else {
-//       document.querySelector(".cont_modal").className = "cont_modal";
-//       c++;
-//     }
-//   }
 
-// "use strict";
-// webix.ui({
-// rows:[
-//   { view:"template",
-//     type:"header", template:"My App!" },
-//   { view:"datatable",
-//     autoConfig:true,
-//     data:{
-//       title:"My Fair Lady", year:1964, votes:533848, rating:8.9, rank:5
-//     }
-//   }
-// ]
-// });
 "use strict";
 var filter = {
   view: "accordion",
@@ -145,7 +118,7 @@ webix.ui({
           width: 37,
           align: "left",
           css: "app_button",
-          click: function() {
+          click: function () {
             $$("$sidebar1").toggle();
           }
         },
@@ -179,7 +152,7 @@ webix.ui({
           css: "webix_dark",
           data: menu_data,
           on: {
-            onAfterSelect: function(id) {
+            onAfterSelect: function (id) {
               webix.message("Selected: " + this.getItem(id).value);
             }
           }
@@ -191,65 +164,68 @@ webix.ui({
           gridColumns: 4,
           gridRows: 1,
           cols: [
-              {
-                  view: "accordion",
-                  rows: [
+            {
+              view: "accordion",
+              rows: [
+                {
+                  view: "accordionitem",
+                  header: "Pane 1",
+                  headerHeight: 50,
+                  body: {
+                    view: "form",
+                    elements: [
                       {
-                          view: "accordionitem",
-                          header: "Pane 1",
-                          headerHeight: 50,
-                          body: {
-                              view: "form",
-                              elements: [
-                                  {view:"radio", name:"gr1x", label:"Branch", value:2, options:[
-                                    { value:"Master", id:1 },
-                                    { value:"Branch", id:2 },
-                                  ] },
-                                  {
-                                      rows: [
-                                          { template: "Alpha fields", type: "section" },
-                                          { view: "text", label: "Alpha 1", value: "" },
-                                          { view: "text", label: "Alpha 2", value: "" }
-                                        ]
-                                    },
-                                    {
-                                        rows: [
-                                            { template: "Beta fields", type: "section" },
-                                            { view: "text", label: "Beta 1", value: "" }
-                                        ]
-                                    },
-                                    {
-                                        rows: [
-                                            { template: "1234", type: "section"},
-                                            { view: "text", label: "Beta 1", value: "" },
-                                        ]
-                                    },
-                                    { view:"button", value:"Confirm", width:200, align:"center" }
-                                ]
-                            }
-                        },
-                        {
-                            view: "accordionitem",
-                            header: "Pane 2",
-                            body: "Pane body 2",
-                            collapsed: true
-                        },
-                        {
-                            view: "accordionitem",
-                            header: "Pane 3",
-                            body: "Pane body 3",
-                            collapsed: true
-                        },
-                        {
-                            view: "accordionitem",
-                            header: "Pane 4",
-                            body: "Pane body 4",
-                            collapsed: true
-                        }
+                        view: "radio", name: "gr1x", label: "Branch", value: 2, options: [
+                          { value: "Master", id: 1 },
+                          { value: "Branch", id: 2 },
+                        ]
+                      },
+                      {
+                        rows: [
+                          { template: "Alpha fields", type: "section" },
+                          { view: "text", label: "Alpha 1", value: "" },
+                          { view: "text", label: "Alpha 2", value: "" }
+                        ]
+                      },
+                      {
+                        rows: [
+                          { template: "Beta fields", type: "section" },
+                          { view: "text", label: "Beta 1", value: "" }
+                        ]
+                      },
+                      {
+                        rows: [
+                          { template: "1234", type: "section" },
+                          { view: "text", label: "Beta 1", value: "" },
+                        ]
+                      },
+                      { view: "button", value: "Confirm", width: 200, align: "center" }
                     ]
-                    ,x: 0, y: 0, dx: 1, dy: 1},
-                    { template: "main window", x: 1, y: 0, dx: 3, dy: 1 }
-                ]
+                  }
+                },
+                {
+                  view: "accordionitem",
+                  header: "Pane 2",
+                  body: "Pane body 2",
+                  collapsed: true
+                },
+                {
+                  view: "accordionitem",
+                  header: "Pane 3",
+                  body: "Pane body 3",
+                  collapsed: true
+                },
+                {
+                  view: "accordionitem",
+                  header: "Pane 4",
+                  body: "Pane body 4",
+                  collapsed: true
+                }
+              ]
+              , x: 0, y: 0, dx: 1, dy: 1
+            },
+            { template: "main window", x: 1, y: 0, dx: 3, dy: 1 }
+          ]
         }
 
         // {template:"http->/templates/card_view.html"},
